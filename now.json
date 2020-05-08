@@ -1,0 +1,19 @@
+{
+    "version": 2,
+    "builds": [
+        {
+            "src": "dist/app.bundle.js",
+            "use": "@now/node-server"
+        }
+    ],
+
+    "routes": [
+        {
+            "src": "/",
+            "dest": "dist/app.bundle.js",
+            "methods": [
+                "GET"
+            ]
+        }
+    ]
+}
