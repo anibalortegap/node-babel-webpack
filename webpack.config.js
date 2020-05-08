@@ -11,15 +11,17 @@ module.exports = {
 	},
 	target:'node',
 	node: {
-		__dirname: false,   // if you don't put this is, __dirname
-    __filename: false,  // and __filename return blank or /
+		__dirname: false,  
+    __filename: false, // if you don't put this is, __dirname and __filename return blank
 	},
-	//externals: [nodeExternals()], // Need this to avoid error when working with Express
+	externals: [nodeExternals()], // need this to avoid error when working with Express
   module: {
     rules: [{
       test: /\.js?$/, 
       exclude: /node_modules/,
-      loader:  'babel-loader',
+      use: {
+        loader:  'babel-loader',
+      }
     }]
   }      
 }
